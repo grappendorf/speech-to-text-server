@@ -1,0 +1,19 @@
+[Unit]
+Description=Keyboard Simulator Web Server
+After=network.target
+
+[Service]
+Type=simple
+User=%i
+Group=%i
+WorkingDirectory=/home/grappendorf/workspaces/grappendorf/ai/speech-to-text-server
+Environment=PYTHONUNBUFFERED=1
+Environment=DISPLAY=:0
+Environment=XAUTHORITY=/home/%i/.Xauthority
+# Uncomment and change the following line to set a custom PIN
+#Environment=KEYBOARD_SERVER_PIN=123456
+ExecStart=/usr/bin/python3 keyboard_server.py
+Restart=always
+
+[Install]
+WantedBy=default.target 
