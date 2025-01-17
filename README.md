@@ -72,7 +72,19 @@ Environment=KEYBOARD_SERVER_PIN=your_pin
 
 ## Usage
 
-The server runs on `http://0.0.0.0:8000` and provides a single endpoint:
+You can start the server using the provided script:
+```bash
+# Start with default PIN (123456)
+./start-server.sh
+
+# Start with custom PIN
+./start-server.sh 987654
+
+# Show help
+./start-server.sh --help
+```
+
+Alternatively, the server runs on `http://0.0.0.0:8000` and provides a single endpoint:
 
 - `POST /type`: Accepts JSON with required fields:
   - `text`: The text to type
